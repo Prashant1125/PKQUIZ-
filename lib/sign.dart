@@ -135,34 +135,3 @@ class _SignDemoState extends State<SignDemo> {
     );
   }
 }
-
-class CustomTextField extends StatelessWidget {
-  final TextEditingController? controller;
-  final String? labelText;
-  final String? hintText;
-  const CustomTextField({
-    Key? key,
-    this.controller,
-    this.labelText,
-    this.hintText,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      style: const TextStyle(color: Colors.white, fontSize: 18),
-      controller: controller,
-      decoration: InputDecoration(
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(width: 3, color: Colors.blue),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(width: 3, color: Colors.blue),
-          ),
-          labelText: labelText,
-          labelStyle: const TextStyle(color: Colors.blue),
-          hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.red)),
-    );
-  }
-}
