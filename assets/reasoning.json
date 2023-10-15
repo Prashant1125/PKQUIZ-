@@ -1,0 +1,88 @@
+[
+    {
+    "1": "Question:- \nLook at this series: 2, 1, (1/2), (1/4), ... What number should come next?" ,   
+    "2": "Question:- \nLook at this series: 7, 10, 8, 11, 9, 12, ... What number should come next?",
+    "3": "Question:- \nLook at this series: 36, 34, 30, 28, 24, ... What number should come next?",
+    "4": "Question:- \nLook at this series: 22, 21, 23, 22, 24, 23, ... What number should come next?",
+    "5": "Question:- \nLook at this series: 53, 53, 40, 40, 27, 27, ... What number should come next? ",
+    "6": "Question:- \nOdometer is to mileage as compass is to?",
+    "7": "Question:- \nMarathon is to race as hibernation is to?",
+    "8": "Question:- \nWindow is to pane as book is to?",
+    "9": "Question:- \nCup is to coffee as bowl is to?",
+    "10": "Question:- \nYard is to inch as quart is to?"
+    },
+    {
+     "1" : {
+        "a" : "(1/3)",
+        "b" : "(1/8)",
+        "c" : "(2/8)",
+        "d" : "(1/16)"
+      },
+      "2" : {
+        "a" : "7",
+        "b" : "10",
+        "c" : "12",
+        "d" : "13"
+      },
+      "3" : {
+        "a" : "20",
+        "b" : "22",
+        "c" : "23",
+        "d" : "26"
+      },
+      "4" : {
+        "a" : "22",
+        "b" : "24",
+        "c" : "25",
+        "d" : "26"
+      },
+      "5" : {
+        "a" : "12",
+        "b" : "14",
+        "c" : "27",
+        "d" : "53"
+      },
+      "6" : {
+        "a" : "speed",
+        "b" : "hiking",
+        "c" : "needle",
+        "d" : "direction"
+      },
+      "7" : {
+        "a" : "winter",
+        "b" : "bear",
+        "c" : "dream",
+        "d"  : "sleep"    
+      },
+      "8" : {
+       "a": "noval",
+       "b": "glass",
+       "c": "cover",
+       "d": "page"
+      },
+      "9" : {
+        "a" : "dish",
+        "b" : "spoon",
+        "c" : "soup",
+        "d" : "food"
+      },
+      "10" : {
+        "a" : "galoon",
+        "b" : "ounce",
+        "c" : "milk",
+        "d" : "liquid"
+      }
+    },
+    {
+        "1" : "(1/8)",
+        "2" : "10",
+        "3" : "22",
+        "4" : "25",
+        "5" : "14",
+        "6" : "direction",
+        "7" : "sleep",
+        "8" : "page",
+        "9" : "soup",
+        "10" : "ounce"
+    }
+]

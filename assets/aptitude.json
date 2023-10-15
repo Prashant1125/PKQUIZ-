@@ -1,0 +1,88 @@
+[
+    {
+    "1": "Question:- \nIt was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?" ,   
+    "2": "Question:- \nWhat will be the day of the week 15th August, 2010?",
+    "3": "Question:- \nWhich one of the following is not a prime number?",
+    "4": "Question:- \nWhat least number must be added to 1056, so that the sum is completely divisible by 23 ?",
+    "5": "Question:- \nFind the odd man out - 3, 5, 11, 14, 17, 21",
+    "6": "Question:- \nFind the odd man out - 8, 27, 64, 100, 125, 216, 343",
+    "7": "Question:- \nFind the odd man out - 10, 25, 45, 54, 60, 75, 80",
+    "8": "Question:- \nFind the odd man out - 6, 9, 15, 21, 24, 28, 30",
+    "9": "Question:- \nFind the odd man out - 396, 462, 572, 427, 671, 264",
+    "10": "Question:- \nThe average of 20 numbers is zero. Of them, at the most, how many may be greater than zero?"
+    },
+    {
+     "1" : {
+        "a" : "sunday",
+        "b" : "saturday",
+        "c" : "friday",
+        "d" : "wednesday"
+      },
+      "2" : {
+        "a" : "monday",
+        "b" : "tuesday",
+        "c" : "friday",
+        "d" : "sunday"
+      },
+      "3" : {
+        "a" : "31",
+        "b" : "61",
+        "c" : "71",
+        "d" : "91"
+      },
+      "4" : {
+        "a" : "2",
+        "b" : "3",
+        "c" : "18",
+        "d" : "21"
+      },
+      "5" : {
+        "a" : "21",
+        "b" : "17",
+        "c" : "14",
+        "d" : "3"
+      },
+      "6" : {
+        "a" : "27",
+        "b" : "100",
+        "c" : "125",
+        "d" : "343"
+      },
+      "7" : {
+        "a" : "10",
+        "b" : "45",
+        "c" : "54",
+        "d"  : "75"    
+      },
+      "8" : {
+       "a": "28",
+       "b": "21",
+       "c": "24",
+       "d": "30"
+      },
+      "9" : {
+        "a" : "396",
+        "b" : "427",
+        "c" : "671",
+        "d" : "264"
+      },
+      "10" : {
+        "a" : "0",
+        "b" : "1",
+        "c" : "10",
+        "d" : "19"
+      }
+    },
+    {
+        "1" : "saturday",
+        "2" : "sunday",
+        "3" : "91",
+        "4" : "2",
+        "5" : "14",
+        "6" : "100",
+        "7" : "54",
+        "8" : "28",
+        "9" : "427",
+        "10" : "19"
+    }
+]

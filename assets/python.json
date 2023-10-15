@@ -1,0 +1,88 @@
+[
+    {
+    "1": "Question:- \nWhich of the following is used in pencils?",   
+    "2": "Question:- \nOne horse power is equal to ?",
+    "3": "Question:- \nAtoms are composed of ?",
+    "4": "Question:- \nThe Battle of Plassey was fought in ?",
+    "5": "Question:- \nThe members of the Rajya Sabha are elected by - ",
+    "6": "Question:- \nWho is the father of Geometry?",
+    "7": "Question:- \nWho was known as Iron man of India?",
+    "8": "Question:- \nThe ratio of width of our National flag to its length is",
+    "9": "Question:- \n'Dandia' is a popular dance of",
+    "10": "Question:- \nThe words 'Satyameva Jayate' inscribed below the base plate of the emblem of India are taken from"
+    },
+    {
+     "1" : {
+        "a" : "Graphite",
+        "b" : "Silicon",
+        "c" : "Charcoal",
+        "d" : "Phosphorous"
+      },
+      "2" : {
+        "a" : "746 watts",
+        "b" : "748 watts",
+        "c" : "750 watts",
+        "d" : "736 watts"
+      },
+      "3" : {
+        "a" : "electrons and protons",
+        "b" : "electrons only",
+        "c" : "protons only",
+        "d" : "electrons and nuclei"
+      },
+      "4" : {
+        "a" : "1757",
+        "b" : "1782",
+        "c" : "1748",
+        "d" : "1764"
+      },
+      "5" : {
+        "a" : "the People",
+        "b" : "Lok Sabha",
+        "c" : "elected members of the legislative assembly",
+        "d" : "elected members of the legislative council"
+      },
+      "6" : {
+        "a" : "Aristotle",
+        "b" : "Euclid",
+        "c" : "Pythagoras",
+        "d" : "Kepler"
+      },
+      "7" : {
+        "a" : "Govind Ballabh Pant ",
+        "b" : "Jawaharlal Nehru",
+        "c" : "Subhash Chandra Bose",
+        "d"  : "Sardar Vallabhbhai Patel"    
+      },
+      "8" : {
+       "a": "3:5",
+       "b": "2:3",
+       "c": "2:4",
+       "d": "3:4"
+      },
+      "9" : {
+        "a" : "Punjab",
+        "b" : "Gujarat",
+        "c" : "Tamil Nadu",
+        "d" : "Maharashtra "
+      },
+      "10" : {
+        "a" : "Rigveda",
+        "b" : "Satpath Brahmana",
+        "c" : "Mundak Upanishad",
+        "d" : "Ramayana"
+      }
+    },
+    {
+        "1" : "Graphite",
+        "2" : "746 watts",
+        "3" : "electrons only",
+        "4" : "1757",
+        "5" : "elected members of the legislative assembly",
+        "6" : "Euclid",
+        "7" : "Sardar Vallabhbhai Patel",
+        "8" : "2:3",
+        "9" : "Gujarat",
+        "10" : "Mundak Upanishad"
+    }
+]

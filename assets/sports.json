@@ -1,0 +1,88 @@
+[
+    {
+    "1": "Question:- \nRyder cup is related to which sports?" ,   
+    "2": "Question:- \nWhich among the following is not a trophy or cup related to Hockey?",
+    "3": "Question:- \nWho among the following was known as Flying Sikh?",
+    "4": "Question:- \nWhich organisation oversees the Commonwealth Games?",
+    "5": "Question:- \nWho is the founder of the Indian Olympic Games, who helped in the creation of the National Games of India?",
+    "6": "Question:- \nWho was the “player of the series” in the 2019 Cricket World Cup?",
+    "7": "Question:- \nWhich country will host the 2023 Cricket World Cup?",
+    "8": "Question:- \nHow many times did India win the “Cricket World Cup champion” title?",
+    "9": "Question:- \nWho holds the record for the most runs in all the Cricket World Cup tournaments?",
+    "10": "Question:- \nHow many team members are present in each team of a volleyball game?"
+    },
+    {
+     "1" : {
+        "a" : "POLO",
+        "b" : "GOLF",
+        "c" : "TENNIS",
+        "d" : "LAWN TENNIS"
+      },
+      "2" : {
+        "a" : "Bombay Gold Cup",
+        "b" : "Gurmeet Trophy",
+        "c" : "Indira Gold Cup",
+        "d" : "Narang Cup"
+      },
+      "3" : {
+        "a" : "Milkha Singh",
+        "b" : "Harbhajan Singh",
+        "c" : "Yuvaraj Singh",
+        "d" : "Gurbachan Singh"
+      },
+      "4" : {
+        "a" : "International Olympic Committee",
+        "b" : "British Government",
+        "c" : "Commonwealth Games Federation",
+        "d" : "Association of Commonwealth Games"
+      },
+      "5" : {
+        "a" : "F.C Aurora",
+        "b" : "S.S Dhawan",
+        "c" : "G.D Sondhi",
+        "d" : "M.G Nageskar"
+      },
+      "6" : {
+        "a" : "Kane Williamson",
+        "b" : "Rohit Sharma",
+        "c" : "Mitchell Starc",
+        "d" : "David Warner"
+      },
+      "7" : {
+        "a" : "Sri Lanka",
+        "b" : "India",
+        "c" : "Australia",
+        "d"  : "New Zealand"    
+      },
+      "8" : {
+       "a": "One",
+       "b": "Two",
+       "c": "Three",
+       "d": "Four"
+      },
+      "9" : {
+        "a" : "Viv Richards",
+        "b" : "Sachin Tendulkar",
+        "c" : "Shane Warne",
+        "d" : "Brian Lara"
+      },
+      "10" : {
+        "a" : "4",
+        "b" : "5",
+        "c" : "6",
+        "d" : "7"
+      }
+    },
+    {
+        "1" : "GOLF",
+        "2" : "Narang Cup",
+        "3" : "Milkha Singh",
+        "4" : "Commonwealth Games Federation",
+        "5" : "G.D Sondhi",
+        "6" : "Kane Williamson",
+        "7" : "India",
+        "8" : "Two",
+        "9" : "Sachin Tendulkar",
+        "10" : "6"
+    }
+]
