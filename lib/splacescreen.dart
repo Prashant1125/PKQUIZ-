@@ -27,46 +27,47 @@ class _splashscreenState extends State<splashscreen> {
   // and made the text to align at center
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              "assets/images/splace1.jfif",
-              height: 250,
-            ),
-            const Text(
-              " WELCOME TO \n PKQUIZ \n ARE YOU READY",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color.fromARGB(255, 2, 59, 4),
-                fontSize: 30.0,
-                fontWeight: FontWeight.w600,
-                fontFamily: "times new roman",
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                const Padding(
-                  padding: EdgeInsets.all(20.0),
-                ),
-                const Text(
-                  "-:DEVLOPED BY:-\n PRASHANT PATEL \n PK",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.pink,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15.0,
+      body: SafeArea(
+        child: Container(
+          height: height,
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Center(
+                child: SizedBox(
+                  width: 250,
+                  height: 250,
+                  child: Image.asset(
+                    "assets/images/splace1.jfif",
+                    height: 250,
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+              const Text(
+                " WELCOME TO \n PKQUIZ \n ARE YOU READY",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "times new roman",
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
