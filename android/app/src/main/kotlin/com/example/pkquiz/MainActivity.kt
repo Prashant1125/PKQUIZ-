@@ -1,4 +1,4 @@
-package com.example.pkquiz
+package com.pkquiz
 
 import io.flutter.embedding.android.FlutterActivity
 

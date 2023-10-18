@@ -7,14 +7,14 @@ import 'about.dart';
 import 'conatct.dart';
 import 'feedback.dart';
 
-class NavigationDrawer extends StatefulWidget {
-  const NavigationDrawer({super.key});
+class CustomDrawer extends StatefulWidget {
+  const CustomDrawer({super.key});
 
   @override
-  State<NavigationDrawer> createState() => _NavigationDrawerState();
+  State<CustomDrawer> createState() => _CustomDrawerState();
 }
 
-class _NavigationDrawerState extends State<NavigationDrawer> {
+class _CustomDrawerState extends State<CustomDrawer> {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   @override
