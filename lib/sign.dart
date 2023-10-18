@@ -49,14 +49,16 @@ class _SignDemoState extends State<SignDemo> {
                 ),
                 Column(
                   children: [
-                    const CustomTextField(
+                    CustomTextField(
+                      controller: emailController,
                       labelText: 'Email',
                       hintText: 'Enter valid email id as abc@gmail.com',
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    const CustomTextField(
+                    CustomTextField(
+                      controller: pwdController,
                       labelText: 'Password',
                       hintText: 'Enter secure password',
                     ),
@@ -77,10 +79,11 @@ class _SignDemoState extends State<SignDemo> {
                                   email: emailController.text,
                                   password: pwdController.text)
                               .then((value) {
-                            Fluttertoast.showToast(msg: "Login successfully");
+                            Fluttertoast.showToast(
+                                msg: "Account Created successfully");
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                builder: (context) => const HomePage(),
+                                builder: (context) => const LoginDemo(),
                               ),
                             );
                           }).onError((error, stackTrace) {
