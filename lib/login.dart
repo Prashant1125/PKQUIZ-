@@ -32,7 +32,7 @@ class _LoginDemoState extends State<LoginDemo> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            height: height,
+            height: height - 100,
             padding: const EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -125,7 +125,7 @@ class _LoginDemoState extends State<LoginDemo> {
                   children: [
                     const Center(
                       child: Text(
-                        'if You are new user? ',
+                        "You don't have account? ",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),

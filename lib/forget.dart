@@ -23,7 +23,7 @@ class _ForgetState extends State<Forget> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-              height: height,
+              height: height - 100,
               padding: const EdgeInsets.all(10),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

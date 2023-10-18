@@ -27,7 +27,7 @@ class _SignDemoState extends State<SignDemo> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            height: height,
+            height: height - 100,
             padding: const EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
