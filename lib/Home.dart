@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pkquiz/menu.dart';
 import 'package:pkquiz/quizpge.dart';
+import 'package:pkquiz/services/admob/ad_manager.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +12,56 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  BannerAd? _bannerAd;
+  bool _isLoaded = false;
+  InterstitialAd? _interstitialAd;
+
+  createInterstitialAd() {
+    InterstitialAd.load(
+        adUnitId: AdManager.interstitialAdUnitId,
+        request: const AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            _interstitialAd = ad;
+            print('InterstitialAd loaded: ${ad.adUnitId}');
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('InterstitialAd failed to load: $error');
+          },
+        ));
+  }
+
+  /// Loads a banner ad.
+  void loadAd() {
+    _bannerAd = BannerAd(
+      adUnitId: AdManager.bannerAdUnitId,
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        // Called when an ad is successfully received.
+        onAdLoaded: (ad) {
+          debugPrint('$ad loaded.');
+          setState(() {
+            _isLoaded = true;
+          });
+        },
+        // Called when an ad request failed.
+        onAdFailedToLoad: (ad, err) {
+          debugPrint('BannerAd failed to load: $err');
+          // Dispose the ad here to free resources.
+          ad.dispose();
+        },
+      ),
+    )..load();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadAd();
+    createInterstitialAd();
+  }
+
   List<String> quiztype = [
     "GENERAL KNOWLEDGE",
     "MATHEMATICS",
@@ -39,6 +91,7 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
       child: InkWell(
         onTap: (() {
+          if (_interstitialAd != null) _interstitialAd!.show();
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -105,18 +158,46 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       drawer: CustomDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text(
-          "PKQUIZ",
-          style: TextStyle(
-              fontSize: 30.0,
-              color: Colors.green,
-              fontFamily: "times new roman",
-              fontWeight: FontWeight.w700),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   centerTitle: true,
+      //   title: const Text(
+      //     "PKQUIZ",
+      //     style: TextStyle(
+      //         fontSize: 30.0,
+      //         color: Colors.green,
+      //         fontFamily: "times new roman",
+      //         fontWeight: FontWeight.w700),
+      //   ),
+      // ),
+      appBar: _bannerAd == null || !_isLoaded
+          ? AppBar(
+              // backgroundColor: Constants.themeColor,
+              backgroundColor: Colors.white,
+              // leading: SizedBox(),
+              centerTitle: true,
+              title: Text(
+                "PKQUIZ",
+                // "Banner ad will load here...",
+                style: TextStyle(color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+              elevation: 0,
+            )
+          : AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              // leading: SizedBox(),
+              centerTitle: true,
+              title: Align(
+                alignment: Alignment.bottomCenter,
+                child: SizedBox(
+                  width: _bannerAd?.size.width.toDouble(),
+                  height: _bannerAd?.size.height.toDouble(),
+                  child: AdWidget(ad: _bannerAd!),
+                ),
+              ),
+            ),
       body: ListView(
         children: <Widget>[
           customcard(quiztype[0], images[0], des[0]),
