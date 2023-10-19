@@ -158,28 +158,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       drawer: CustomDrawer(),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   centerTitle: true,
-      //   title: const Text(
-      //     "PKQUIZ",
-      //     style: TextStyle(
-      //         fontSize: 30.0,
-      //         color: Colors.green,
-      //         fontFamily: "times new roman",
-      //         fontWeight: FontWeight.w700),
-      //   ),
-      // ),
       appBar: _bannerAd == null || !_isLoaded
           ? AppBar(
-              // backgroundColor: Constants.themeColor,
               backgroundColor: Colors.white,
-              // leading: SizedBox(),
               centerTitle: true,
               title: Text(
                 "PKQUIZ",
                 // "Banner ad will load here...",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(
+                  color: Colors.green,
+                  fontFamily: "times new roman",
+                  fontWeight: FontWeight.w700,
+                  fontSize: 30.0,
+                ),
                 textAlign: TextAlign.center,
               ),
               elevation: 0,

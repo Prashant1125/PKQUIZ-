@@ -107,7 +107,7 @@ class _LoginDemoState extends State<LoginDemo> {
                       alignment: Alignment.centerRight,
                       child: InkWell(
                           onTap: () {
-                            Navigator.of(context).pushReplacement(
+                            Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => const Forget(),
                               ),
@@ -127,7 +127,7 @@ class _LoginDemoState extends State<LoginDemo> {
                       child: Text(
                         "You don't have account? ",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     Padding(
@@ -142,7 +142,7 @@ class _LoginDemoState extends State<LoginDemo> {
                           },
                           child: const Text(
                             'Create new account',
-                            style: TextStyle(fontSize: 18, color: Colors.blue),
+                            style: TextStyle(fontSize: 17, color: Colors.blue),
                           )),
                     )
                   ],

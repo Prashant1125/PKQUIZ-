@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pkquiz/login.dart';
 
-import 'Home.dart';
-
 class SignDemo extends StatefulWidget {
   const SignDemo({super.key});
 
@@ -108,7 +106,7 @@ class _SignDemoState extends State<SignDemo> {
                         child: Text(
                           'If you have already sign up ',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                       Padding(

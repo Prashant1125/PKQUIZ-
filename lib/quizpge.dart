@@ -248,11 +248,9 @@ class _quizpageState extends State<quizpage> {
                         j = 0;
 
                         ///TODO: stop timer here and navigate
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                            (Route<dynamic> route) => false);
                       },
                       child: Text(
                         'Yes',
