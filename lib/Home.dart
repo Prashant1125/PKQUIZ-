@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
 
   createInterstitialAd() {
     InterstitialAd.load(
-        adUnitId: AdManager.interstitialAdUnitId,
+        adUnitId: AdManager.bannerAdUnitId,
         request: const AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
