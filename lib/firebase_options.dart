@@ -30,7 +30,6 @@ class DefaultFirebaseOptions {
         return ios;
       case TargetPlatform.macOS:
         return macos;
-      // TODO(Lyokone): Remove when FlutterFire CLI updated
       case TargetPlatform.windows:
         return android;
       default:
@@ -54,7 +53,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAMOpwHL58qWszHhOu9gnyVuFWxT6rMi8A',
-    appId: '1:1185127174:android:b7c3a05d2b38c3fead9c87',
+    appId: '1:1185127174:android:df80cad13b0a91b1ad9c87',
     messagingSenderId: '1185127174',
     projectId: 'pkquiz-7187a',
     // databaseURL:
