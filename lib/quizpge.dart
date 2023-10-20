@@ -49,6 +49,9 @@ class _getjsonState extends State<getjson> {
           // ignore: unnecessary_null_comparison
           if (mydata == null) {
             return Scaffold(
+              appBar: AppBar(
+                title: Text("questions"),
+              ),
               body: Center(
                 child: Text(
                   "Loading",
@@ -103,9 +106,6 @@ class _quizpageState extends State<quizpage> {
   // -----     CODE TO GENERATE ARRAY RANDOMLY
 
   genrandomarray() {
-    List<int> distinctIds = [];
-    var rand = Random();
-
     random_array = List.generate(11, (index) => index);
     random_array.remove(0);
     random_array.shuffle();
@@ -247,7 +247,6 @@ class _quizpageState extends State<quizpage> {
                         i = 0;
                         j = 0;
 
-                        ///TODO: stop timer here and navigate
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(builder: (context) => HomePage()),
                             (Route<dynamic> route) => false);
