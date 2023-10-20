@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pkquiz/resultpage.dart';
+import 'package:pkquiz/services/admob/ad_manager.dart';
 
 import 'Home.dart';
 
@@ -49,9 +51,6 @@ class _getjsonState extends State<getjson> {
           // ignore: unnecessary_null_comparison
           if (mydata == null) {
             return Scaffold(
-              appBar: AppBar(
-                title: Text("questions"),
-              ),
               body: Center(
                 child: Text(
                   "Loading",
@@ -79,6 +78,49 @@ class quizpage extends StatefulWidget {
 }
 
 class _quizpageState extends State<quizpage> {
+  BannerAd? _bannerAd;
+  bool _isLoaded = false;
+  InterstitialAd? _interstitialAd;
+
+  createInterstitialAd() {
+    InterstitialAd.load(
+        adUnitId: AdManager.bannerAdUnitId,
+        request: const AdRequest(),
+        adLoadCallback: InterstitialAdLoadCallback(
+          onAdLoaded: (InterstitialAd ad) {
+            _interstitialAd = ad;
+            print('InterstitialAd loaded: ${ad.adUnitId}');
+          },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('InterstitialAd failed to load: $error');
+          },
+        ));
+  }
+
+  /// Loads a banner ad.
+  void loadAd() {
+    _bannerAd = BannerAd(
+      adUnitId: AdManager.bannerAdUnitId,
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        // Called when an ad is successfully received.
+        onAdLoaded: (ad) {
+          debugPrint('$ad loaded.');
+          setState(() {
+            _isLoaded = true;
+          });
+        },
+        // Called when an ad request failed.
+        onAdFailedToLoad: (ad, err) {
+          debugPrint('BannerAd failed to load: $err');
+          // Dispose the ad here to free resources.
+          ad.dispose();
+        },
+      ),
+    )..load();
+  }
+
   Timer? timer;
   Color colortoshow = Colors.indigoAccent;
   Color right = Colors.green;
@@ -117,6 +159,8 @@ class _quizpageState extends State<quizpage> {
     starttimer();
     genrandomarray();
     super.initState();
+    loadAd();
+    createInterstitialAd();
   }
 
   // overriding the setstate function to be called only if mounted
@@ -260,6 +304,36 @@ class _quizpageState extends State<quizpage> {
         return true;
       },
       child: Scaffold(
+        appBar: _bannerAd == null || !_isLoaded
+            ? AppBar(
+                backgroundColor: Colors.cyan,
+                centerTitle: true,
+                title: Text(
+                  "QUESTIONS",
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontFamily: "times new roman",
+                    fontWeight: FontWeight.w700,
+                    fontSize: 30.0,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                elevation: 0,
+              )
+            : AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0,
+                // leading: SizedBox(),
+                centerTitle: true,
+                title: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    width: _bannerAd?.size.width.toDouble(),
+                    height: _bannerAd?.size.height.toDouble(),
+                    child: AdWidget(ad: _bannerAd!),
+                  ),
+                ),
+              ),
         body: Column(
           children: <Widget>[
             Expanded(
@@ -270,9 +344,9 @@ class _quizpageState extends State<quizpage> {
                 child: Text(
                   widget.mydata != null ? widget.mydata[0][i.toString()] : "",
                   style: TextStyle(
-                    fontSize: 16.0,
-                    fontFamily: "Quando",
-                  ),
+                      fontSize: 20.0,
+                      fontFamily: "Quando",
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             ),
