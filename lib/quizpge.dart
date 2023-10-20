@@ -306,15 +306,15 @@ class _quizpageState extends State<quizpage> {
       child: Scaffold(
         appBar: _bannerAd == null || !_isLoaded
             ? AppBar(
-                backgroundColor: Colors.cyan,
+                backgroundColor: Colors.black,
                 centerTitle: true,
                 title: Text(
                   "QUESTIONS",
                   style: TextStyle(
-                    color: Colors.green,
+                    color: Colors.white,
                     fontFamily: "times new roman",
                     fontWeight: FontWeight.w700,
-                    fontSize: 30.0,
+                    fontSize: 25.0,
                   ),
                   textAlign: TextAlign.center,
                 ),
