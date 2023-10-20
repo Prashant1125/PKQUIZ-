@@ -80,22 +80,6 @@ class quizpage extends StatefulWidget {
 class _quizpageState extends State<quizpage> {
   BannerAd? _bannerAd;
   bool _isLoaded = false;
-  InterstitialAd? _interstitialAd;
-
-  createInterstitialAd() {
-    InterstitialAd.load(
-        adUnitId: AdManager.bannerAdUnitId,
-        request: const AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (InterstitialAd ad) {
-            _interstitialAd = ad;
-            print('InterstitialAd loaded: ${ad.adUnitId}');
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            print('InterstitialAd failed to load: $error');
-          },
-        ));
-  }
 
   /// Loads a banner ad.
   void loadAd() {
@@ -160,7 +144,6 @@ class _quizpageState extends State<quizpage> {
     genrandomarray();
     super.initState();
     loadAd();
-    createInterstitialAd();
   }
 
   // overriding the setstate function to be called only if mounted
