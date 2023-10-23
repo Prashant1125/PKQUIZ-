@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pkquiz/Home.dart';
-import 'package:pkquiz/menu.dart';
+import 'package:pkquiz/editprofile.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -23,124 +23,127 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My Profile"),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: Container(
-                width: 1000,
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 15),
-                child: Text(
-                  "Welcome to My Profile",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 30,
-                      fontFamily: "times new roman",
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: Container(
-                width: 1000,
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 15),
-                child: Icon(
-                  Icons.account_box_rounded,
-                  size: 200,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: Container(
-                width: 1000,
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 15),
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                ),
-                child: Text(
-                  (user?.displayName ?? "Unkown Name"),
-                  style: TextStyle(color: Colors.blue, fontSize: 18),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: Container(
-                width: 1000,
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 15),
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                ),
-                child: Text(
-                  (user?.phoneNumber ?? "Unkown Mobile No."),
-                  style: TextStyle(color: Colors.blue, fontSize: 18),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              child: Container(
-                width: 1000,
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 15),
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                ),
-                child: Text(
-                  (user?.email ?? "Unknown"),
-                  style: TextStyle(color: Colors.blue, fontSize: 18),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 65,
-              width: 360,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                  child: const Text(
-                    'Done ',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          title: const Text("My Profile"),
         ),
-      ),
-      // body: ListView(
-      //   // mainAxisAlignment: MainAxisAlignment.center,
-      //   // crossAxisAlignment: CrossAxisAlignment.center,
-      //   children: [
-      //
-      //     Text(user?.displayName ?? "Unknown"),
-      //     Text(user?.email ?? "Unknown"),
-      //   ],
-      // ),
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              color: Color.fromARGB(255, 4, 93, 7), width: 5)),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                'https://i.pinimg.com/564x/15/c8/2f/15c82fa8cc0198c588ca11cf43048619.jpg'),
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Center(child: CircularProgressIndicator());
+                            },
+                            errorBuilder: (context, Object, stackTrace) {
+                              return Container(
+                                child: Icon(
+                                  Icons.error_outline,
+                                  color: Colors.red,
+                                ),
+                              );
+                            }),
+                      ),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20)),
+                  ReusabaleRow(
+                    title: 'Name',
+                    value: user?.displayName ?? "Unkown Name",
+                    iconData: Icons.person,
+                  ),
+                  ReusabaleRow(
+                      title: 'Email',
+                      value: user?.email ?? "Unknown",
+                      iconData: Icons.email_rounded),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue),
+                        child: const Text(
+                          'Done ',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue),
+                        child: const Text(
+                          'Edit profile',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => const EditProfile(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
+  }
+}
+
+class ReusabaleRow extends StatelessWidget {
+  final String title, value;
+  final IconData iconData;
+  const ReusabaleRow(
+      {super.key,
+      required this.title,
+      required this.iconData,
+      required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListTile(
+          title: Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          leading: Icon(iconData),
+          trailing: Text(
+            value,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        )
+      ],
     );
   }
 }

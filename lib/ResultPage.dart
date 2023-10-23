@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pkquiz/Home.dart';
@@ -67,6 +69,8 @@ class _ResultPageState extends State<ResultPage> {
   // _resultpageState(this.marks);
   @override
   Widget build(BuildContext context) {
+    var firebaseDb = FirebaseFirestore.instance;
+    var firebaseAuth = FirebaseAuth.instance;
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -143,6 +147,15 @@ class _ResultPageState extends State<ResultPage> {
                       backgroundColor: Colors.blue,
                       padding: const EdgeInsets.all(15)),
                   onPressed: () {
+                    firebaseDb.collection("result").add({
+                      "id": 0,
+                      "userName": firebaseAuth.currentUser?.displayName,
+                      "userId": firebaseAuth.currentUser?.uid,
+                      "useEmail": firebaseAuth.currentUser?.email,
+                      "usePhotoUrl": firebaseAuth.currentUser?.photoURL,
+                      "date": DateTime.now(),
+                      "score": marks
+                    });
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const HomePage(),
