@@ -42,7 +42,7 @@ class _LoginDemoState extends State<LoginDemo> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 30,
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 214, 217, 219),
                       fontFamily: "times new roman",
                       fontWeight: FontWeight.bold),
                 ),

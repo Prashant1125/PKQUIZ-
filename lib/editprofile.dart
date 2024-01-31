@@ -22,7 +22,7 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         centerTitle: true,
@@ -92,11 +92,6 @@ class _EditProfileState extends State<EditProfile> {
                     const SizedBox(
                       height: 20,
                     ),
-                    // CustomTextField(
-                    //   controller: pwdController,
-                    //   labelText: 'Password',
-                    //   hintText: 'Reset Password',
-                    // ),
                     const SizedBox(
                       height: 5,
                     ),
@@ -128,15 +123,16 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   onPressed: () async {
                     await firebaseAuth.currentUser!
-                        .updateEmail(emailController.text)
-                        .then((value) => firebaseAuth.currentUser!
-                            .updateDisplayName(namController.text)
-                            .then((value) =>
-                                Navigator.of(context).pushReplacement(
-                                  MaterialPageRoute(
-                                    builder: (context) => const ProfileView(),
-                                  ),
-                                )));
+                        .updateEmail(emailController.text);
+
+                    firebaseAuth.currentUser!
+                        .updateDisplayName(namController.text);
+
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const ProfileView(),
+                      ),
+                    );
                   },
                 ),
               ],
