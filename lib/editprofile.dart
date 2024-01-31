@@ -123,6 +123,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   onPressed: () async {
                     await firebaseAuth.currentUser!
+                        // ignore: deprecated_member_use
                         .updateEmail(emailController.text);
 
                     firebaseAuth.currentUser!
