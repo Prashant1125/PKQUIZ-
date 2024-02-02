@@ -8,6 +8,7 @@ import 'package:pkquiz/services/admob/ad_manager.dart';
 
 import 'Home.dart';
 
+// ignore: must_be_immutable
 class getjson extends StatefulWidget {
   // accept the langname as a parameter
 
@@ -324,6 +325,7 @@ class _quizpageState extends State<quizpage> {
                 padding: EdgeInsets.all(15.0),
                 alignment: Alignment.bottomLeft,
                 child: Text(
+                  // ignore: unnecessary_null_comparison
                   widget.mydata != null ? widget.mydata[0][i.toString()] : "",
                   style: TextStyle(
                       fontSize: 20.0,

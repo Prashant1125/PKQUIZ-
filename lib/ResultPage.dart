@@ -5,6 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:pkquiz/Home.dart';
 import 'package:pkquiz/services/admob/ad_manager.dart';
 
+// ignore: must_be_immutable
 class ResultPage extends StatefulWidget {
   int marks;
   ResultPage({Key? key, required this.marks}) : super(key: key);
