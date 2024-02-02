@@ -249,6 +249,7 @@ class _quizpageState extends State<quizpage> {
 
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
         showDialog(
