@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:pkquiz/login.dart';
 import 'package:pkquiz/profile.dart';
 import 'Home.dart';
-import 'about.dart';
 import 'conatct.dart';
 import 'feedback.dart';
 
@@ -70,18 +69,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ContactPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.feed),
-              title: Text("ABOUT"),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AboutPage(),
                   ),
                 );
               },
